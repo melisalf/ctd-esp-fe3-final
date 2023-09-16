@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { useContextGlobal } from "../Context/Context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
+
+  const { theme, dispatch } = useContextGlobal(); 
+  const toggleTheme = () => {
+    dispatch({ type: 'TOGGLE_TEMA' });
+  };
 
   const [details, setDetails] = useState ({})
   const {id} = useParams()
@@ -22,7 +28,7 @@ const Detail = () => {
   return (
     <>
       <h1>Detalle del dentista </h1>
-      <div className="detail">
+      <div className={`navbar ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`} id= "detail">
         <h2> Nombre: {details.name}</h2>
         <h3> Email: {details.email}</h3>
         <h3> Telefono: {details.phone}</h3>

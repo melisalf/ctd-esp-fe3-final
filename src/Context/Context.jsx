@@ -19,8 +19,8 @@ const reducer = (state, action) => {
     case "ADD_FAVS":
       return {...state, favs: [...state.favs, action.payload]}
     case 'TOGGLE_THEME':
-      const newTheme = state.theme === 'light' ? 'dark' : 'light';
-      return { ...state, theme: newTheme };
+      const nuevoTheme = state.theme === 'light' ? 'dark' : 'light';
+      return { ...state, theme: nuevoTheme };
     default:
       return state;
   }

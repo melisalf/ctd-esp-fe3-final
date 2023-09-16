@@ -6,11 +6,14 @@ import { useContextGlobal } from '../Context/Context'
 
 const Home = () => {
 
-  const {state} = useContextGlobal()
+  const {state, dispatch} = useContextGlobal()
+  const toggleTheme = () => {
+    dispatch({ type: 'TOGGLE_TEMA' });
+  };
 
   // mapear la información de la API y devolver una card por cada dentista;
   return (
-    <main>
+    <main className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'} >
       <h1>CLINICA DENTAL</h1>
       <div className='card-grid'>
       {state.dentistas.map(dentista => <Card key= {dentista.id} dentista= {dentista}/> ) }

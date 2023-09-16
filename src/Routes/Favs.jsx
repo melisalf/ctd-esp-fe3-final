@@ -5,16 +5,25 @@ import { useContextGlobal } from "../Context/Context";
 
 const Favs = () => {
 
-  const {state} = useContextGlobal()
+  const {state, dispatch} = useContextGlobal()
+
+  const toggleTheme = () => {
+    dispatch({ type: 'TOGGLE_TEMA' });
+  };
+
 
   return (
     <>
-      <h1>Tus dentistas favoritos</h1>
+    <div className={`navbar ${state.theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+    <h1>Tus dentistas favoritos</h1>
       <div className="card-grid">
         {state.favs.map(fav =>   <Card dentista={fav} key= {fav.id}/> )}
         {/* este componente debe consumir los destacados del localStorage */}
         {/* Deberan renderizar una Card por cada uno de ellos */}      
       </div>
+
+    </div>
+      
     </>
   );
 };
