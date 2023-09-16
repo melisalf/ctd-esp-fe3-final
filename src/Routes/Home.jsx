@@ -10,11 +10,13 @@ const Home = () => {
 
   // mapear la información de la API y devolver una card por cada dentista;
   return (
-    <div className='card-grid'>
+    <main>
       <h1>CLINICA DENTAL</h1>
-      <h2>Nuestros especialistas</h2>
-      {state.dentistas.map(dentista =>  <Card key= {dentista.id} dentista= {dentista}/> ) }
-    </div>
+      <div className='card-grid'>
+      {state.dentistas.map(dentista => <Card key= {dentista.id} dentista= {dentista}/> ) }
+      </div>
+    </main>
+    
   )
 }
 

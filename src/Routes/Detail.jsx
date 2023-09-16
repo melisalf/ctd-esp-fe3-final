@@ -22,7 +22,7 @@ const Detail = () => {
   return (
     <>
       <h1>Detalle del dentista </h1>
-      <div>
+      <div className="detail">
         <h2> Nombre: {details.name}</h2>
         <h3> Email: {details.email}</h3>
         <h3> Telefono: {details.phone}</h3>

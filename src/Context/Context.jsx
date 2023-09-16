@@ -3,20 +3,6 @@ import axios from "axios";
 
 const ContextGlobal = createContext()
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "GET_DENTISTAS":
-      return {...state, dentistas: action.payload}
-    case "ADD_FAVS":
-      return {...state, favs: [...state.favs, action.payload]}
-    case 'TOGGLE_THEME':
-      const newTheme = state.theme === 'light' ? 'dark' : 'light'; // Cambia entre claro y oscuro
-      return { ...state, theme: newTheme };
-    default:
-      return state;
-  }
-}
-
 const localFavs = JSON.parse(localStorage.getItem('favs'))
 const initialFavState = localFavs ? localFavs : []
 
@@ -25,6 +11,23 @@ const initialState = {
   favs: initialFavState,
   theme: "light",
 }
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "GET_DENTISTAS":
+      return {...state, dentistas: action.payload}
+    case "ADD_FAVS":
+      return {...state, favs: [...state.favs, action.payload]}
+    case 'TOGGLE_THEME':
+      const newTheme = state.theme === 'light' ? 'dark' : 'light';
+      return { ...state, theme: newTheme };
+    default:
+      return state;
+  }
+}
+
+
+
 
 const ContextProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState)

@@ -6,19 +6,15 @@ import icowhatsapp from "../assets/ico-whatsapp.png"
 
 const Footer = () => {
   return (
-    <footer style={{backgroundColor: "blue" } }>
-      <div style={{display: "flex"} }>
-      <img src= {logoclinica} alt='DH-logo' style={{ width:200 }}/>
-        <div style={ {display: "flex", justifyContent: "flex-end", justifyItems: "baseline"} }>
-          <img src= {icofacebook} alt="" />
-          <img src= {icoinsta} alt="" />
-          <img src= {icotiktok} alt="" />
-          <img src= {icowhatsapp} alt="" />
-        </div> 
-      </div>
-      
-      
-    </footer>
+    <div className="">
+      <footer>
+        <img src= {logoclinica} alt='DH-logo'/>
+        <img className="socialIcon" src= {icofacebook} alt="" />
+        <img className="socialIcon" src= {icoinsta} alt="" />
+        <img className="socialIcon" src= {icotiktok} alt="" />
+        <img className="socialIcon" src= {icowhatsapp} alt="" />
+      </footer>
+    </div>
   )
 }
 
