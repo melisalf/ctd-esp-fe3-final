@@ -11,8 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>
-      <div>
+    <header id="header" className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>
       <nav className='nav'>
         <Link to="/"> <h4>Inicio</h4> </Link>
         <Link to="/favs"> <h4>Favoritos</h4></Link>
@@ -21,9 +20,6 @@ const Navbar = () => {
         {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
       <button className='theme' onClick={toggleTheme}>Cambiar Tema</button>
       </nav>
-     
-
-      </div>
    
     </header>    
     

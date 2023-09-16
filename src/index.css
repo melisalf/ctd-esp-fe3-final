@@ -54,7 +54,7 @@ a:hover{
 } 
 
 
-header{
+#header{
   background-color: rgba(37, 7, 187, 0.797);;
   display: flex;
   align-items: center;

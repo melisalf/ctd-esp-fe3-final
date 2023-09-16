@@ -11,7 +11,7 @@ const Contact = () => {
   };
 
   return (
-    <div className={`navbar ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`} id="contacto">
+    <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'} id="contacto">
       <h2>Quieres saber mas?</h2>
       <p>Envíanos tus dudas y nos pondremos en contacto contigo.</p>
       <Form/>

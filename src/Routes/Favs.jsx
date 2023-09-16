@@ -14,7 +14,7 @@ const Favs = () => {
 
   return (
     <>
-    <div className={`navbar ${state.theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+    <div className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>
     <h1>Tus dentistas favoritos</h1>
       <div className="card-grid">
         {state.favs.map(fav =>   <Card dentista={fav} key= {fav.id}/> )}
